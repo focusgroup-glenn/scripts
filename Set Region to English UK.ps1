@@ -1,9 +1,19 @@
-# Script to define regional settings on Azure Virtual Machines deployed from the market place
+#description: Script to define regional settings on Azure Virtual Machines to English UK
+#execution mode: IndividualWithRestart
+#tags: Focus, Nerdio, Preview, Language
 # Author: Alexandre Verkinderen
 # Modified by Glenn Stockinger 11/07/2023
 # Blogpost: https://mscloud.be/configure-regional-settings-and-windows-locales-on-azure-virtual-machines/
-#
-######################################33
+<#
+Notes:
+This script will setup windows OS for English UK Language settings. It will set the Date and time format
+as well as the Keyboard layout.
+
+This feature is in preview, and it is recommended that you test in a validation environment
+before using in production.
+
+A reboot is required after running this script for the configuration to take effect.
+#>
 
 #variables
 $regionalsettingsURL = "https://raw.githubusercontent.com/averkinderen/Azure/master/101-ServerBuild/AURegion.xml"
