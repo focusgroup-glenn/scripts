@@ -16,7 +16,7 @@ A reboot is required after running this script for the configuration to take eff
 #>
 
 #variables
-$regionalsettingsURL = "https://github.com/focusgroup-glenn/scripts/blob/main/AURegion.xml"
+$regionalsettingsURL = "https://raw.githubusercontent.com/focusgroup-glenn/scripts/main/AURegion.xml"
 $RegionalSettings = "C:\Windows\AURegion.xml"
 
 #Install The UK Language Pack (en-GB)
