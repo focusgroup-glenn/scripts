@@ -31,7 +31,7 @@ $webclient.DownloadFile($regionalsettingsURL,$RegionalSettings)
 
 
 # Set Locale, language etc. 
-& $env:SystemRoot\System32\control.exe "intl.cpl,,/f:'"$RegionalSettings'""
+& $env:SystemRoot\System32\control.exe "intl.cpl,,/f:"'$RegionalSettings'"
 
 # Set languages/culture. Not needed perse.
 Set-SystemPreferredUILanguage en-GB
