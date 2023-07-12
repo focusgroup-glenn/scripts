@@ -16,7 +16,7 @@ A reboot is required after running this script for the configuration to take eff
 #>
 
 #variables
-$regionalsettingsURL = "https://raw.githubusercontent.com/averkinderen/Azure/master/101-ServerBuild/AURegion.xml"
+$regionalsettingsURL = "https://github.com/focusgroup-glenn/scripts/blob/main/AURegion.xml"
 $RegionalSettings = "C:\Windows\AURegion.xml"
 
 #Install The UK Language Pack (en-GB)
@@ -31,7 +31,7 @@ $webclient.DownloadFile($regionalsettingsURL,$RegionalSettings)
 
 
 # Set Locale, language etc. 
-& $env:SystemRoot\System32\control.exe "intl.cpl,,/f:`"$RegionalSettings`""
+& $env:SystemRoot\System32\control.exe "intl.cpl,,/f:'"$RegionalSettings'""
 
 # Set languages/culture. Not needed perse.
 Set-SystemPreferredUILanguage en-GB
