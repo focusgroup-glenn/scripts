@@ -22,6 +22,9 @@ $RegionalSettings = "C:\Windows\AURegion.xml"
 #Install The UK Language Pack (en-GB)
 Install-language en-gb
 
+#Set Regional Location
+Set-WinHomeLocation -GeoId 242
+
 #downdload regional settings file
 $webclient = New-Object System.Net.WebClient
 $webclient.DownloadFile($regionalsettingsURL,$RegionalSettings)
@@ -35,7 +38,7 @@ Set-SystemPreferredUILanguage en-GB
 Set-WinSystemLocale en-GB
 Set-WinUserLanguageList -LanguageList en-GB -Force
 Set-Culture -CultureInfo en-GB
-Set-WinHomeLocation -GeoId 242
+
 Set-TimeZone -Name "GMT Standard Time"
 
 # restart virtual machine to apply regional settings to current user. You could also do a logoff and login.
