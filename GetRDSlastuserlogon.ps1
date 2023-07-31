@@ -1,6 +1,3 @@
-Apologies for the confusion. You're right; the `Get-RDUserSession` cmdlet doesn't provide the last logon time directly. To get the last logon time for users in an RDS farm, we need to use a different approach. One way is to query the Windows event logs to find the last logon event for each user. Here's an updated PowerShell script that accomplishes this:
-
-```powershell
 # Function to convert FileTime to DateTime
 function Convert-FileTimeToDateTime {
     param([int64]$fileTime)
@@ -51,8 +48,3 @@ $report = $report | Sort-Object LastLogon -Descending
 
 # Display the report
 $report | Format-Table -AutoSize
-```
-
-This script now queries the Windows security event logs (ID 4624) to find the last logon event for each user within the last 30 days. It then extracts the last logon time from the event and includes it in the report. The report is sorted by the most recent last logon date first.
-
-Again, make sure you have the necessary permissions to run the script and access event logs on the RDS farm. Adjust the time range in the `StartTime` parameter of `Get-WinEvent` if you want to search for a different period.
